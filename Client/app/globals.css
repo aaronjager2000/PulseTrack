@@ -30,6 +30,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+footer {
+  background-color: #162456;
+  color: white;
+}
+
 @keyframes fadeWords {
   0%,
   100% {
@@ -70,6 +75,11 @@ header li a:nth-child(1):hover {
     display: none;
   }
 
+  footer {
+    background-color: #162456;
+    color: white;
+  }
+
   #description {
     font-size: 12px;
     width: 400px;
@@ -92,6 +102,11 @@ header li a:nth-child(1):hover {
 
   header li button {
     display: none;
+  }
+
+  footer {
+    background-color: #162456;
+    color: white;
   }
 
   #description {
