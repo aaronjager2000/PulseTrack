@@ -4,6 +4,8 @@ import HomeText from "./src/Compoents/HomeText";
 import Description from "./src/Compoents/Descriptions";
 import PricesSection from "./src/Compoents/Prices";
 import RegText from "./src/Compoents/RegText";
+import Footer from "./src/Compoents/Footer";
+// import { useState } from "react";
 
 function Home() {
   return (
@@ -14,11 +16,10 @@ function Home() {
 
       <div>
         <HomeText heading="| Pulse Tracker |" textOne="Welcome" />
-        <Description description="We're An Open Source SaaS | Lets Users Create Accounts and Invite Teammates For Creating Issues for Problems" />
+        <Description description="Created By The PulseTrack | Team" />
       </div>
 
-      <RegText />
-      <PricesSection />
+      <Footer />
     </Fragment>
   );
 }

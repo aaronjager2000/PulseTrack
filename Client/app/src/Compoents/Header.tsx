@@ -12,12 +12,17 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <Link className="px-5 font-bold text-md" href="">
+            <Link
+              className="px-4 p-3 text-md text-blue-900
+              font-black text-"
+              href="/"
+            >
               Home
             </Link>
-            <Link className="px-5 font-bold text-md" href="">
+            <Link className="px-5 font-bold text-md" href="/my_account">
               My Account
             </Link>
+            <button className="font-thin">| Dark Mode |</button>
           </li>
         </ul>
       </nav>
