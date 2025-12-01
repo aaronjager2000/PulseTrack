@@ -4,7 +4,7 @@ function Header() {
   if (new Date().getHours() < 15) {
     return (
       <header
-        className="max-sm:bg-wnite max-sm:text-sm  max-sm:font-bold flex justify-around max-md:justify-around bg-white max-md:p-2 max-md:pr-[300]
+        className="max-sm:bg-wnite max-sm:text-sm  max-sm:font-bold flex justify-around max-md:justify-around bg-black max-md:p-2 max-md:pr-[300]
       max-md:py-5 max-md:bg-white max-md:text-black py-5"
       >
         <div>
@@ -19,7 +19,7 @@ function Header() {
           <ul>
             <li>
               <Link
-                className="md:bg-white md:px p-3 max-md:hidden text-blue-900
+                className="md:bg-black md:px p-3 max-md:hidden text-blue-900
               font-black text-"
                 href="/"
               >
@@ -39,10 +39,12 @@ function Header() {
   }
 
   return (
-    <header className="max-sm:bg-wnite max-sm:text-sm  max-sm:font-bold flex md:flex md:justify justify-around md:bg-white md:py-5 md:text-black">
+    <header className="max-sm:bg-wnite max-sm:text-sm  max-sm:font-bold flex md:flex md:justify justify-around md:bg-black md:py-5 md:text-black">
       <div>
         <Link href="/">
-          <h4 className="max-md:text-2sm md:text-white">Pulse | Track</h4>
+          <h4 className="max-md:text-2sm md:text-white font-bold">
+            Pulse | Track
+          </h4>
         </Link>
       </div>
 
