@@ -4,6 +4,7 @@ import HomeText from "./src/Compoents/HomeText";
 import Description from "./src/Compoents/Descriptions";
 import PricesSection from "./src/Compoents/Prices";
 import RegText from "./src/Compoents/RegText";
+import Footer from "./src/Compoents/Footer";
 
 function Home() {
   return (
@@ -18,7 +19,8 @@ function Home() {
       </div>
 
       <RegText />
-      <PricesSection />
+
+      <Footer />
     </Fragment>
   );
 }

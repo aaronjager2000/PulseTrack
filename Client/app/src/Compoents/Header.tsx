@@ -12,10 +12,10 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <Link className="px-5 font-bold text-md" href="">
+            <Link className="px-5 font-bold text-md" href="/">
               Home
             </Link>
-            <Link className="px-5 font-bold text-md" href="">
+            <Link className="px-5 font-bold text-md" href="/my_account">
               My Account
             </Link>
           </li>
