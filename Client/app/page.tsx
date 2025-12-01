@@ -1,6 +1,9 @@
 import { Fragment } from "react/jsx-runtime";
 import Header from "./src/Compoents/Header";
 import HomeText from "./src/Compoents/HomeText";
+import Description from "./src/Compoents/Descriptions";
+import PricesSection from "./src/Compoents/Prices";
+import RegText from "./src/Compoents/RegText";
 
 function Home() {
   return (
@@ -10,8 +13,12 @@ function Home() {
       </div>
 
       <div>
-        <HomeText heading="Welcome to Pulse Tracker" />
+        <HomeText heading="| Pulse Tracker |" textOne="Welcome" />
+        <Description description="We're An Open Source SaaS | Lets Users Create Accounts and Invite Teammates For Creating Issues for Problems" />
       </div>
+
+      <RegText />
+      <PricesSection />
     </Fragment>
   );
 }
