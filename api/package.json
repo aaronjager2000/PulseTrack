@@ -1,8 +1,13 @@
 {
   "dependencies": {
     "@prisma/client": "^7.0.1",
+    "@prisma/extension-accelerate": "^3.0.0",
     "express": "^5.1.0",
     "prisma": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5"
   },
   "name": "api",
   "version": "1.0.0",
