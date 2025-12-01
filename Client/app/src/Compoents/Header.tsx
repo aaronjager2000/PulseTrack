@@ -4,8 +4,8 @@ function Header() {
   return (
     <header className="flex justify-between px-9 py-9 ">
       <div>
-        <Link className="font-bold" href="/">
-          PulseTrack
+        <Link className="font-bold " href="/">
+          <span className="text-blue-900 uppercase">Pulse</span> | Track
         </Link>
       </div>
 
