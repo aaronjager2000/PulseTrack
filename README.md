@@ -1,9 +1,5 @@
 # 🚀 PulseTrack: Modern Open-Source Analytics SaaS
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/your-org/pulsetrack/main?style=for-the-badge)
-![GitHub Contributors](https://img.shields.io/github/contributors/your-org/pulsetrack?style=for-the-badge)
-![License](https://img.shields.io/github/license/your-org/pulsetrack?style=for-the-badge)
-
 PulseTrack is an ambitious, modern, open-source analytics SaaS application built from the ground up to showcase **real-world SaaS development patterns** and **collaborative engineering**.
 
 Our direction is primarily driven by the contributors themselves. We aim to create a polished product that serves as a powerful learning tool and a strong portfolio piece for everyone involved.
