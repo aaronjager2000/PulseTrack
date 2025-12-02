@@ -18,7 +18,7 @@ function Home() {
       </div>
 
       <div className="flex max-md:flex-col justify-between">
-        <BoxSection textBox="What We Offer" />
+        <BoxSection textBox="What We Offer." />
         <BoxSection textBox="What We Offer" />
         <BoxSection textBox="What We Offer" />
       </div>
