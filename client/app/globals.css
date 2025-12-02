@@ -1,20 +1,11 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 #description {
   padding: 1rem;
   width: 100%;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body {
+  background-color: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,4 +53,10 @@ header li a:nth-child(1):hover {
   padding: 10px;
   width: 600px;
   animation: fadeWords 10s linear infinite;
+}
+
+#box {
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
 }
