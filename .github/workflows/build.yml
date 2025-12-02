@@ -57,6 +57,10 @@ jobs:
         run: npm ci
         working-directory: api
 
+      - name: Prisma generate
+        run: npx prisma generate
+        working-directory: api
+
       - name: Build API
         run: npm run build --if-present
         working-directory: api
