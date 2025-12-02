@@ -20,47 +20,62 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
         working-directory: client
 
-      - name: Build client
-        run: npm run build --if-present
+      - run: npm run build --if-present
         working-directory: client
 
   build-api:
     name: Build API
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: github
+          POSTGRES_PASSWORD: github
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U github -d testdb"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgres://github:github@localhost:5432/testdb?schema=public
+      NODE_ENV: test
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
           cache-dependency-path: api/package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
         working-directory: api
 
-      - name: Prisma generate
+      - name: Generate Prisma client
         run: npx prisma generate
         working-directory: api
 
       - name: Build API
         run: npm run build --if-present
+        working-directory: api
+
+      - name: Run API tests
+        run: npm test
         working-directory: api
