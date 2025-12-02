@@ -17,12 +17,12 @@ jobs:
       - name: Use Node.js (Client)
         uses: actions/setup-node@v4
         with:
-          node-version: "24.10.1"
+          node-version: "24"
           cache: "npm"
           cache-dependency-path: Client/package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefix client
         working-directory: Client
 
       - name: Build
