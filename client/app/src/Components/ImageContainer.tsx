@@ -5,7 +5,7 @@ function ImageContainer(props: { image: TypedString }) {
   const empty = props.image === '';
   const notImage = !empty;
 
-  if (empty == true) {
+  if (notImage) {
     return (
       <div>
         <Image
@@ -17,7 +17,6 @@ function ImageContainer(props: { image: TypedString }) {
         />
       </div>
     );
-  } else if (!empty) {
   }
 }
 
