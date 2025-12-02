@@ -11,18 +11,26 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         package: [api, client]
+
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-      - name: Install dependencies for ${{ matrix.package }}
+          cache: "npm"
+          cache-dependency-path: ${{ matrix.package }}/package-lock.json
+
+      - name: Install dependencies
         run: npm ci --prefix ${{ matrix.package }}
-      - name: Run ESLint for ${{ matrix.package }}
+
+      - name: Run ESLint
         run: npm run lint --prefix ${{ matrix.package }}
-      - name: Check Prettier formatting for ${{ matrix.package }}
+
+      - name: Check formatting
         run: npm run format:check --prefix ${{ matrix.package }}
