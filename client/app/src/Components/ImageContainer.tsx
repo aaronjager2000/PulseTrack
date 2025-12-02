@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 function ImageContainer(props: any) {
-  const empty = props.image === "";
+  const empty = props.image === '';
   const notImage = !empty;
 
   if (empty == true) {
@@ -12,7 +12,7 @@ function ImageContainer(props: any) {
           height="200"
           className="flex justify-center relative top-[85vh] right-[370px]"
           alt="PIC"
-          src={notImage ? props.image : ""}
+          src={notImage ? props.image : ''}
         />
       </div>
     );
