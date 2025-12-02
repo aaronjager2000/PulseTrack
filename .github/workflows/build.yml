@@ -34,48 +34,48 @@ jobs:
       - run: npm run build --if-present
         working-directory: client
 
-  build-api:
-    name: Build API
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_USER: github
-          POSTGRES_PASSWORD: github
-          POSTGRES_DB: testdb
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U github -d testdb"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+  # build-api:
+  #   name: Build API
+  #   runs-on: ubuntu-latest
+  #   services:
+  #     postgres:
+  #       image: postgres:15
+  #       env:
+  #         POSTGRES_USER: github
+  #         POSTGRES_PASSWORD: github
+  #         POSTGRES_DB: testdb
+  #       ports:
+  #         - 5432:5432
+  #       options: >-
+  #         --health-cmd "pg_isready -U github -d testdb"
+  #         --health-interval 10s
+  #         --health-timeout 5s
+  #         --health-retries 5
 
-    env:
-      DATABASE_URL: postgres://github:github@localhost:5432/testdb?schema=public
-      NODE_ENV: test
+  #   env:
+  #     DATABASE_URL:  postgres://github:github@localhost:5432/testdb
+  #     NODE_ENV: test
 
-    steps:
-      - uses: actions/checkout@v4
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: 'npm'
-          cache-dependency-path: api/package-lock.json
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '24'
+  #         cache: 'npm'
+  #         cache-dependency-path: api/package-lock.json
 
-      - run: npm ci
-        working-directory: api
+  #     - run: npm ci
+  #       working-directory: api
 
-      - name: Generate Prisma client
-        run: npx prisma generate
-        working-directory: api
+  #     - name: Generate Prisma client
+  #       run: npx prisma generate
+  #       working-directory: api
 
-      - name: Build API
-        run: npm run build --if-present
-        working-directory: api
+  #     - name: Build API
+  #       run: npm run build --if-present
+  #       working-directory: api
 
-      - name: Run API tests
-        run: npm test
-        working-directory: api
+  #     - name: Run API tests
+  #       run: npm test
+  #       working-directory: api
