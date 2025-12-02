@@ -4,12 +4,12 @@ function Header() {
   if (new Date().getHours() < 15) {
     return (
       <header
-        className="max-sm:bg-wnite max-sm:text-sm  max-sm:font-bold flex justify-around max-md:justify-around bg-black max-md:p-2 max-md:pr-[300]
+        className="max-xl:justify-between max-sm:bg-wnite max-sm:text-sm max-sm:font-bold flex justify-around max-md:justify-around bg-black max-md:p-2 max-md:pr-[300]
       max-md:py-5 max-md:bg-white max-md:text-black py-5"
       >
         <div>
           <Link href="/">
-            <span className="maX-md-text:blue-900 text-1xs">
+            <span className="max-md-text:blue-900 text-1xs">
               Pulse<span className="md:text-white text-2xs">Track</span>
             </span>
           </Link>
@@ -39,7 +39,7 @@ function Header() {
   }
 
   return (
-    <header className="max-sm:bg-wnite max-sm:text-sm  max-sm:font-bold flex md:flex md:justify justify-around md:bg-black md:py-5 md:text-black">
+    <header className="max-xl:justify-between max-sm:bg-wnite max-sm:text-sm p-5 max-sm:font-bold flex md:flex md:justify justify-around md:bg-black md:py-5 md:text-black">
       <div>
         <Link href="/">
           <h4 className="max-md:text-2sm md:text-white font-bold">

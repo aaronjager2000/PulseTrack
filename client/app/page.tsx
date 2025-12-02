@@ -1,9 +1,11 @@
-import { Fragment } from "react/jsx-runtime"
-import Description from "./src/Compoents/Descriptions"
-import Footer from "./src/Compoents/Footer"
-import Header from "./src/Compoents/Header"
-import HomeText from "./src/Compoents/HomeText"
-// import { useState } from "react";
+import { Fragment } from "react/jsx-runtime";
+import Header from "./src/Compoents/Header";
+import HomeText from "./src/Compoents/HomeText";
+import Description from "./src/Compoents/Descriptions";
+import PricesSection from "./src/Compoents/Prices";
+import RegText from "./src/Compoents/RegText";
+import Footer from "./src/Compoents/Footer";
+import BoxSection from "./src/Compoents/BoxSeftion";
 
 function Home() {
   return (
@@ -15,6 +17,12 @@ function Home() {
       <div>
         <HomeText heading="| Pulse Tracker |" textOne="Welcome" />
         <Description description="Created By The PulseTrack | Team" />
+      </div>
+
+      <div className="flex max-md:flex-col justify-between">
+        <BoxSection textBox="What We Offer" />
+        <BoxSection textBox="What We Offer" />
+        <BoxSection textBox="What We Offer" />
       </div>
 
       <Footer />
