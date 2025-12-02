@@ -1,9 +1,11 @@
 {
   "dependencies": {
+    "@eslint/js": "^9.39.1",
     "@prisma/client": "^7.0.1",
     "@prisma/extension-accelerate": "^3.0.0",
     "express": "^5.1.0",
-    "prisma": "^7.0.1"
+    "prisma": "^7.0.1",
+    "typescript-eslint": "^8.48.0"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
@@ -28,7 +30,7 @@
     "lint:fix": "eslint . --ext .js,.ts --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "is-ci || husky install"
   },
   "lint-staged": {
     "*.{js,ts,json,md}": [
