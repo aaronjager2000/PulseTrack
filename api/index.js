@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 import express from 'express';
-=======
+
 const express = require("express");
->>>>>>> 5704bba363f75b9c7ec10896fc90bfd432e51f97
 const app = express();
 const port = 3000;
 
