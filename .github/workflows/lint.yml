@@ -2,11 +2,19 @@ name: Lint & Format
 
 on:
   pull_request:
+    branches:
+      - main
+      - DevOps-/-Tooling
+      - Frontend
+      - prismdb
+      - Issue4-Backend_Boilerplate
   push:
     branches:
       - main
-      - master
-      - dev
+      - DevOps-/-Tooling
+      - Frontend
+      - prismdb
+      - Issue4-Backend_Boilerplate
 
 jobs:
   lint:
@@ -22,8 +30,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "24"
-          cache: "npm"
+          node-version: '24'
+          cache: 'npm'
           cache-dependency-path: ${{ matrix.package }}/package-lock.json
 
       - name: Install dependencies
