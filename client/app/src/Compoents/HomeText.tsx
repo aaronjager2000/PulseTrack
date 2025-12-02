@@ -1,6 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 
-function HomeText(props: any) {
+function HomeText(props: {textOne: string, heading: string}) {
   return (
     <Fragment>
       <div

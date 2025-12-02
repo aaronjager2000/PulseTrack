@@ -1,6 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 
-function BoxSection(props: any) {
+function BoxSection(props: {textBox: string}) {
   return (
     <Fragment>
       <div
