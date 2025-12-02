@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 function Header() {
   if (new Date().getHours() < 15) {
@@ -42,9 +42,7 @@ function Header() {
     <header className="max-xl:justify-between max-sm:bg-wnite max-sm:text-sm p-5 max-sm:font-bold flex md:flex md:justify justify-around md:bg-black md:py-5 md:text-black">
       <div>
         <Link href="/">
-          <h4 className="max-md:text-2sm md:text-white font-bold">
-            Pulse | Track
-          </h4>
+          <h4 className="max-md:text-2sm md:text-white font-bold">Pulse | Track</h4>
         </Link>
       </div>
 
@@ -58,10 +56,7 @@ function Header() {
             >
               Home
             </Link>
-            <Link
-              className="px-5 font-bold text-md text-md text-blue-900"
-              href="/my_account"
-            >
+            <Link className="px-5 font-bold text-md text-md text-blue-900" href="/my_account">
               My Account
             </Link>
           </li>

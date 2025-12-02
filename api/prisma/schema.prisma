@@ -1,58 +1,54 @@
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
 }
 
-model User {
-  id String @id @default(cuid())
-
-  userName String @unique
-  password String
-  email String @unique
-
-  phone String? @unique
-  name String?
-
-  registeredAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  role Role @default(USER)
-
-  memberships Membership[]
-  leads Organization[] @relation("Leaders")
-}
-
-model Organization{
-  id String @id @default(cuid())
-
-  leader User @relation("Leaders", fields: [leaderId], references: [id])
-  leaderId String
-
-  memberships Membership[]
-}
-
-model Membership{
-  id String @id @default(cuid())
-
-  userId String
+model Membership {
+  userId         String
   organizationId String
-
-  jobTitle String?
-
-  joinedAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id])
-  organization  Organization @relation(fields: [organizationId], references: [id])
+  jobTitle       String?
+  joinedAt       DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  Organization   Organization @relation(fields: [organizationId], references: [id])
+  User           User         @relation(fields: [userId], references: [id])
 
   @@unique([userId, organizationId])
 }
 
-enum Role{
+model Organization {
+  id         String       @id @default(cuid())
+  name       String
+  leaderId   String
+  Membership Membership[]
+  User       User         @relation(fields: [leaderId], references: [id])
+}
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  name         String?
+  password     String
+  phone        String?        @unique
+  registeredAt DateTime       @default(now())
+  role         Role           @default(USER)
+  updatedAt    DateTime       @updatedAt
+  userName     String         @unique
+  Membership   Membership[]
+  Organization Organization[]
+}
+
+model Metrics{
+  id           String @id @default(cuid())
+  count        Int  @default(0)
+  name         String
+}
+
+enum Role {
   USER
   ADMIN
+  OWNER
 }
