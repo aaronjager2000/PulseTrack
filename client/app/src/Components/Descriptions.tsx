@@ -1,4 +1,6 @@
-function Description(props: { description: string }) {
+import { TypedString } from '../Types/TypeFooter';
+
+function Description(props: { description: TypedString }) {
   return (
     <div className="flex text-center px-9 justify-center">
       <p

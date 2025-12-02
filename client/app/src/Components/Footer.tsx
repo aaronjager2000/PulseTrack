@@ -1,8 +1,10 @@
-function Footer() {
+import { FootTitle } from '../Types/TypeFooter';
+
+function Footer(title: FootTitle) {
   return (
     <footer className="p-3 text-black text-center font-bold relative top-[100vh]">
       <div>
-        <p>&copy; 2025 PulseTrack</p>
+        <p>&copy; {title.title}</p>
       </div>
     </footer>
   );
