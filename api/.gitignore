@@ -2,8 +2,9 @@ node_modules
 # Keep environment variables out of version control
 .env
 
-packet-lock.json
+package-lock.json
 
 /generated/prisma
 
 /src/generated
+/prisma/migrations

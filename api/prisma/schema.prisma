@@ -43,7 +43,7 @@ model User {
 
 model Metrics{
   id           String @id @default(cuid())
-  count        Int
+  count        Int  @default(0)
   name         String
 }
 
