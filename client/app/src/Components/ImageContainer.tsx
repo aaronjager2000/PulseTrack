@@ -1,6 +1,7 @@
+import { TypedString } from '../Types/TypeFooter';
 import Image from 'next/image';
 
-function ImageContainer(props: { image: any }) {
+function ImageContainer(props: { image: TypedString }) {
   const empty = props.image === '';
   const notImage = !empty;
 
