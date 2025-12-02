@@ -31,7 +31,7 @@ async function main() {
     },
   });
 
-  const membership = await prisma.membership.createMany({
+  await prisma.membership.createMany({
     data: [
       {
         userId: owner.id,

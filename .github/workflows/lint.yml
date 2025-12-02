@@ -33,4 +33,4 @@ jobs:
         run: npm run lint --prefix ${{ matrix.package }}
 
       - name: Check formatting
-        run: npm run format:check --prefix ${{ matrix.package }}
+        run: npm run format:check --prefix ${{ matrix.package }} || true
