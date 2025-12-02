@@ -25,11 +25,10 @@ function Home() {
         <BoxSection textBox="What We Offer." />
         <BoxSection textBox="What We Offer" />
         <ImageContainer image />
-        <BoxSection textBox="What We Offer" />
         <ImageContainer image />
       </div>
 
-      <Footer />
+      <Footer title="2025 PulseTrack" />
     </Fragment>
   );
 }
