@@ -1,40 +1,38 @@
 import { withAccelerate } from '@prisma/extension-accelerate';
-import { PrismaClient } from  '../generated/prisma/client'
+import { PrismaClient } from '../generated/prisma/client';
 
-const prisma = new PrismaClient(
-  {
-    accelerateUrl: process.env.DATABASE_URL as string,
-  }
-  ).$extends(withAccelerate());
+const prisma = new PrismaClient({
+  accelerateUrl: process.env.DATABASE_URL as string,
+}).$extends(withAccelerate());
 
 async function main() {
-  const owner = await prisma.user.create({data:
-    {
+  const owner = await prisma.user.create({
+    data: {
       email: 'owner@owner.com',
       password: 'owner',
       userName: 'owner',
-      role: 'OWNER'
-    }
-  })
+      role: 'OWNER',
+    },
+  });
 
-  const user = await prisma.user.create({data:
-    {
+  const user = await prisma.user.create({
+    data: {
       email: 'test@tesst.com',
       password: 'test',
       userName: 'test',
-      role: 'USER'
-    }
-  })
+      role: 'USER',
+    },
+  });
 
-  const organization = await prisma.organization.create({data:
-    {
+  const organization = await prisma.organization.create({
+    data: {
       leaderId: owner.id,
-      name: 'PulseTrack'
-    }
-  })
+      name: 'PulseTrack',
+    },
+  });
 
-  const membership = await prisma.membership.createMany({data:
-    [
+  await prisma.membership.createMany({
+    data: [
       {
         userId: owner.id,
         organizationId: organization.id,
@@ -43,10 +41,16 @@ async function main() {
       {
         userId: user.id,
         organizationId: organization.id,
-        jobTitle: 'Employee'
-      }
-    ]
-  })
+        jobTitle: 'Employee',
+      },
+    ],
+  });
+
+  await prisma.metrics.create({
+    data: {
+      name: 'users',
+    },
+  });
 }
 
 main()

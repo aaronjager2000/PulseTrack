@@ -1,6 +1,6 @@
-import { Fragment } from "react/jsx-runtime";
+import { Fragment } from 'react/jsx-runtime';
 
-function HomeText(props: any) {
+function HomeText(props: { textOne: string; heading: string }) {
   return (
     <Fragment>
       <div
@@ -11,9 +11,7 @@ function HomeText(props: any) {
           id="task"
           className="text-center text-2xl relative top-[200px] font-bold text-blue-700 "
         >
-          <span className="tracking-wide text2 text-white w-200 p-2 ">
-            {props.textOne}
-          </span>
+          <span className="tracking-wide text2 text-white w-200 p-2 ">{props.textOne}</span>
           {props.heading}
         </span>
       </div>

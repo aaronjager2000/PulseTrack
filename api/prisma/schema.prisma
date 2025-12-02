@@ -41,6 +41,12 @@ model User {
   Organization Organization[]
 }
 
+model Metrics{
+  id           String @id @default(cuid())
+  count        Int  @default(0)
+  name         String
+}
+
 enum Role {
   USER
   ADMIN
