@@ -5,7 +5,7 @@ import Description from "./src/Compoents/Descriptions";
 import PricesSection from "./src/Compoents/Prices";
 import RegText from "./src/Compoents/RegText";
 import Footer from "./src/Compoents/Footer";
-// import { useState } from "react";
+import BoxSection from "./src/Compoents/BoxSeftion";
 
 function Home() {
   return (
@@ -17,6 +17,12 @@ function Home() {
       <div>
         <HomeText heading="| Pulse Tracker |" textOne="Welcome" />
         <Description description="Created By The PulseTrack | Team" />
+      </div>
+
+      <div className="flex max-md:flex-col justify-between">
+        <BoxSection textBox="What We Offer" />
+        <BoxSection textBox="What We Offer" />
+        <BoxSection textBox="What We Offer" />
       </div>
 
       <Footer />
