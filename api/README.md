@@ -8,6 +8,7 @@ First, run the development server:
 npm i
 npx prisma generate
 ```
+
 Next
 
 ```bash
@@ -19,12 +20,11 @@ pnpm dev
 # or
 bun dev
 ```
+
 ##Seeding
 
 ```
 npx prisma db seed
 ```
 
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-

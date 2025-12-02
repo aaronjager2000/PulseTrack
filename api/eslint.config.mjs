@@ -1,31 +1,31 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
+import globals from 'globals';
 
 export default [
   // Base ESLint recommended rules
   js.configs.recommended,
 
-  // TypeScript recommended rules
+  // TypeScript recommended rules (flat config)
   ...tseslint.configs.recommended,
 
   // Prettier compatibility
   prettier,
 
   {
-    // Your original environment settings
+    files: ['**/*.{js,ts}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
 
       globals: {
-        // Node + ES2021 environment support
-        ...tseslint.environments.node.globals,
+        ...globals.node,
       },
     },
 
     rules: {
-      // Your rules object (empty for now)
+      // Custom rules here if needed
     },
   },
 

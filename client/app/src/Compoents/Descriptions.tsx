@@ -1,4 +1,4 @@
-function Description(props: {description: string}) {
+function Description(props: { description: string }) {
   return (
     <div className="flex text-center px-9 justify-center">
       <p

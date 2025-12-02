@@ -1,4 +1,4 @@
-function MaAccountPage(props: {userName: string}) {
+function MaAccountPage(props: { userName: string }) {
   return (
     <div>
       <p>Welcome {props.userName}</p>
