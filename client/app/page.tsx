@@ -20,12 +20,12 @@ function Home() {
 
       <div className="flex max-md:flex-col justify-between">
         <BoxSection textBox="What We Offer" />
-        <ImageContainer image />
+        <ImageContainer image="" />
 
         <BoxSection textBox="What We Offer." />
         <BoxSection textBox="What We Offer" />
-        <ImageContainer image />
-        <ImageContainer image />
+        <ImageContainer image="" />
+        <ImageContainer image="" />
       </div>
 
       <Footer title="2025 PulseTrack" />
